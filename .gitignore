@@ -1,1 +1,13 @@
+# Каталог для збудованих файлів
+/build/
+
+# Файли CMake
+CMakeCache.txt
+CMakeFiles/
+
+# Загальні файли IDE
+.idea/
+.vscode/
+*.user
+
 todo.txt
