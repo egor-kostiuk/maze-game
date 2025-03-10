@@ -10,7 +10,7 @@ include_directories("/usr/local/Cellar/sfml/3.0.0_1/include")
 set(CMAKE_OSX_ARCHITECTURES "x86_64")  # Використовуємо x86_64 для Intel Mac
 
 # Додаємо вихідний файл
-add_executable(MySFMLProject src/main.cpp) # всі модулі
+add_executable(MySFMLProject src/Game.cpp) # всі модулі
 
 # Линкуємо бібліотеки SFML
 target_link_libraries(MySFMLProject
