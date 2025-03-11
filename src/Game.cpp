@@ -26,14 +26,17 @@ int main()
     // Clear screen
     window.clear(sf::Color::White);
 
+    int showMaze = 1;
     // Drawing a maze
-    for (int i = 0; i < rows; i++) {
-      for (int j = 0; j < cols; j++) {
-        if (generatedMaze[i][j] == 1) {
-          sf::RectangleShape wall(sf::Vector2f(cellSize, cellSize));
-          wall.setFillColor(sf::Color::Black);
-          wall.setPosition(sf::Vector2f(j * cellSize, i * cellSize));
-          window.draw(wall);
+    if ( showMaze == 1 ) {
+      for (int i = 0; i <= rows; i++) {
+        for (int j = 0; j <= cols; j++) {
+          if (generatedMaze[i][j] == 1) {
+            sf::RectangleShape wall(sf::Vector2f(cellSize, cellSize));
+            wall.setFillColor(sf::Color::Black);
+            wall.setPosition(sf::Vector2f(j * cellSize, i * cellSize));
+            window.draw(wall);
+          }
         }
       }
     }
