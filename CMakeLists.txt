@@ -3,19 +3,34 @@ cmake_minimum_required(VERSION 3.10)
 project(MySFMLProject)
 
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Налаштування для macOS
 set(CMAKE_OSX_DEPLOYMENT_TARGET "12.7")
+set(CMAKE_OSX_ARCHITECTURES "x86_64")  # або arm64 для Apple Silicon
 
-# Вказуємо точні шляхи до заголовкових файлів SFML
-include_directories("/usr/local/Cellar/sfml/3.0.0_1/include")
-set(CMAKE_OSX_ARCHITECTURES "x86_64")  # Використовуємо x86_64 для Intel Mac
+# Вказуємо шлях до заголовочних файлів SFML
+include_directories(
+    /Users/x/Desktop/projects/SFML/build/install/include
+)
 
-# Додаємо вихідний файл
-add_executable(MySFMLProject src/Game.cpp) # всі модулі
+# Вказуємо шлях до бібліотек SFML
+link_directories(
+    /Users/x/Desktop/projects/SFML/build/install/lib
+)
 
-# Линкуємо бібліотеки SFML
+# Додаємо головний файл
+add_executable(MySFMLProject
+    src/Game.cpp
+    src/components/Maze.cpp
+    src/constants/MainConstants.h
+)
+
+# Лінкуємо SFML
 target_link_libraries(MySFMLProject
-    /usr/local/Cellar/sfml/3.0.0_1/lib/libsfml-window.dylib
-    /usr/local/Cellar/sfml/3.0.0_1/lib/libsfml-system.dylib
-    /usr/local/Cellar/sfml/3.0.0_1/lib/libsfml-graphics.dylib
-    /usr/local/Cellar/sfml/3.0.0_1/lib/libsfml-audio.dylib
+    sfml-system
+    sfml-window
+    sfml-graphics
+    sfml-audio
+    sfml-network
 )
