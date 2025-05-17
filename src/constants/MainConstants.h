@@ -1,8 +1,8 @@
 #pragma once
 
 // Window size
-constexpr unsigned int WINDOW_HEIGHT = 720;
-constexpr unsigned int WINDOW_WIDTH  = 1280;
+constexpr unsigned int WINDOW_HEIGHT = 620;
+constexpr unsigned int WINDOW_WIDTH  = 620;
 
 // Maze scale
 const int cellSize = 20;
