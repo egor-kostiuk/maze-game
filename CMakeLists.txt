@@ -23,6 +23,7 @@ link_directories(
 add_executable(MySFMLProject
     src/Game.cpp
     src/components/Maze.cpp
+    src/components/PathFinder.cpp
     src/constants/MainConstants.h
 )
 
