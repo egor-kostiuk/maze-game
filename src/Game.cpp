@@ -37,7 +37,7 @@ int main()
 
   // Font
   sf::Font font;
-	if (!font.openFromFile("../assets/fonts/OpenSans-Italic.ttf")) {
+	if (!font.openFromFile("../src/assets/fonts/OpenSans-Italic.ttf")) {
       std::cerr << "Failed to load font!\n";
 	}
 
